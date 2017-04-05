@@ -11,3 +11,4 @@ UWP
 7.	Ustawienie cache strony w taki sposób żeby lista i pola u góry  się odświeżały za każdym razem ale pole Numer Palety (skanowane) było wyświetlane - póki co wykorzystałem zapisywanie danych na dysku.
 INNE
 1.	RDO(ODBC), ADO w Crystal Reports – zasada dzialania
+2.  CystalReportViewer w VisualStudio - memory leak
