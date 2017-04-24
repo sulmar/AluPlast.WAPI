@@ -27,6 +27,8 @@ namespace AluPlast.Service
 
 
             config.MessageHandlers.Add(new TraceMessageHandler());
+            config.MessageHandlers.Add(new SecretKeyHandler());
+            config.MessageHandlers.Add(new UnderConstructionHandler());
 
             appBuilder.UseWebApi(config);
         }

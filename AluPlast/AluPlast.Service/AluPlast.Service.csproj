@@ -78,7 +78,9 @@
     <Compile Include="Controllers\LoadsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="CustomActionResult.cs" />
+    <Compile Include="MessageHandlers\SecretKeyHandler.cs" />
     <Compile Include="MessageHandlers\TraceMessageHandler.cs" />
+    <Compile Include="MessageHandlers\UnderConstructionHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
