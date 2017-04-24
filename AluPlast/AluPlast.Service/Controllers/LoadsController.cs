@@ -12,11 +12,21 @@ namespace AluPlast.Service.Controllers
 {
     public class LoadsController : ApiController
     {
-        private ILoadsService LoadsService = new DbLoadsService();
+        private readonly ILoadsService LoadsService;
 
-        public IList<Load> Get(DateTime id)
+        public LoadsController()
+            : this(new DbLoadsService())
+        { }
+
+        public LoadsController(ILoadsService loadsService)
         {
-            var loads = LoadsService.Get(id);
+            this.LoadsService = loadsService;
+        }
+
+        [Route("api/loads/{date:datetime}")]
+        public IList<Load> Get(DateTime date)
+        {
+            var loads = LoadsService.Get(date);
 
             return loads;
         }
