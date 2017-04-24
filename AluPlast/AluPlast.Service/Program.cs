@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Owin.Hosting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,18 @@ namespace AluPlast.Service
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello");
+            string baseAddress = "http://localhost:9000";
+
+            using (WebApp.Start<Startup>(baseAddress))
+            {
+                Console.WriteLine($"Service on {baseAddress} started.");
+
+                Console.WriteLine("Press any key to exit.");
+
+                Console.ReadKey();
+            }
+
+
         }
     }
 }
