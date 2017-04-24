@@ -25,6 +25,15 @@ namespace AluPlast.Service.Controllers
             this.LoadsService = loadsService;
         }
 
+        //[Route(@"api/loads/{id:regex(^SZY\d{3})")]
+        //public IHttpActionResult Get(string id)
+        //{
+
+        //    throw new NotImplementedException();
+
+
+        //}
+
         [Route("api/loads/{date:datetime}")]
         public IHttpActionResult Get(DateTime date)
         {

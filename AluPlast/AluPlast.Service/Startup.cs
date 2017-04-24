@@ -1,4 +1,5 @@
-﻿using Owin;
+﻿using AluPlast.Service.MessageHandlers;
+using Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,9 @@ namespace AluPlast.Service
                     routeTemplate: "api/{controller}/{id}",
                     defaults: new { id = RouteParameter.Optional }
                 );
+
+
+            config.MessageHandlers.Add(new TraceMessageHandler());
 
             appBuilder.UseWebApi(config);
         }
