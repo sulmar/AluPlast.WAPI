@@ -14,6 +14,9 @@ namespace AluPlast.Service
         {
             var config = new HttpConfiguration();
 
+
+            config.MapHttpAttributeRoutes();
+
             config.Routes.MapHttpRoute
                 (
                     name: "DefaultApi",

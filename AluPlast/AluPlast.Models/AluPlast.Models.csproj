@@ -44,6 +44,7 @@
     <Compile Include="EtykietaPalety.cs" />
     <Compile Include="Odczyt.cs" />
     <Compile Include="PaczkaNagRestApi.cs" />
+    <Compile Include="SearchCriterias\LoadSearchCriteria.cs" />
     <Compile Include="UprawnienieDoDzialu.cs" />
     <Compile Include="AdresKontrahenta.cs" />
     <Compile Include="UprawenienieDoMagazynu.cs" />

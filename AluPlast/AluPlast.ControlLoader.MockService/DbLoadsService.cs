@@ -6,6 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using AluPlast.Models;
+using AluPlast.Models.SearchCriterias;
 
 namespace AluPlast.ControlLoader.MockService
 {
@@ -86,6 +87,18 @@ namespace AluPlast.ControlLoader.MockService
         public Task UpdateAsync(Load load)
         {
             return null;
+        }
+
+        public IList<Load> Get(LoadSearchCriteria criteria)
+        {
+
+            var loads = _zaladunki
+                .Where(l => l.LoadDate >= criteria.BeginDate)
+                .Where(l => l.LoadDate <= criteria.EndDate)
+                .Where(l => !criteria.Status.HasValue || l.LoadStatus == criteria.Status.Value)
+                .ToList();
+
+            return loads;
         }
     }
  }

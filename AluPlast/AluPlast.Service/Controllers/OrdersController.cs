@@ -7,9 +7,10 @@ using System.Web.Http;
 
 namespace AluPlast.Service.Controllers
 {
+    [RoutePrefix("api/zamowienia")]
     public class OrdersController : ApiController
     {
-
+        [Route()]
         public string Get()
         {
             Console.WriteLine(this.Request);
@@ -17,19 +18,25 @@ namespace AluPlast.Service.Controllers
             return "Hello Web Api";
         }
 
+        [Route("{id}")]
+        public string Get(string id)
+        {
+            return $"Hello {id}";
+        }
+
+        [Route("{id:int}")]
         public string Get(int id)
         {
             return $"Hello {id}";
         }
 
-        public void Post([FromBody] string text)
+        [Route("{orderdate:DateTime}")]
+        public string Get(DateTime orderdate)
         {
-
+            return $"Hello {orderdate.ToShortDateString()}";
         }
 
-        //public string Get(DateTime id)
-        //{
-        //    return $"Hello {id.ToShortDateString()}";
-        //}
+
+      
     }
 }

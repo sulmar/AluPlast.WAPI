@@ -1,4 +1,5 @@
 ﻿using AluPlast.Models;
+using AluPlast.Models.SearchCriterias;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace AluPlast.ControlLoader.Interfaces
         //Task<IList<Load>> GetAsync();
 
         IList<Load> Get(DateTime date);
+
+        IList<Load> Get(LoadSearchCriteria criteria);
 
         Task<List<Load>> GetAsync(DateTime date);
 
