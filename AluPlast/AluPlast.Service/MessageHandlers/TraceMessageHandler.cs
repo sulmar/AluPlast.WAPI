@@ -19,6 +19,8 @@ namespace AluPlast.Service.MessageHandlers
 
             Trace.WriteLine($"{response.StatusCode}");
 
+            response.Headers.Add("version", "1.0");
+
             return response;
         }
     }
