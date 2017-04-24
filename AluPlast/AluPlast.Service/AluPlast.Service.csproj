@@ -75,6 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\LoadsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +84,20 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AluPlast.ControlLoader.Interfaces\AluPlast.ControlLoader.Interfaces.csproj">
+      <Project>{4A13505E-E6DD-48C2-99EA-A4F39571B297}</Project>
+      <Name>AluPlast.ControlLoader.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AluPlast.ControlLoader.MockService\AluPlast.ControlLoader.MockService.csproj">
+      <Project>{2FA86722-93A7-41DF-A150-A96D2DC0AF8B}</Project>
+      <Name>AluPlast.ControlLoader.MockService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AluPlast.Models\AluPlast.Models.csproj">
+      <Project>{eebbfae4-4661-4836-bfdc-7700817cfc4b}</Project>
+      <Name>AluPlast.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
