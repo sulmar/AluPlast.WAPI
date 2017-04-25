@@ -1,4 +1,5 @@
-﻿using AluPlast.Service.MessageHandlers;
+﻿using AluPlast.Service.Formatters;
+using AluPlast.Service.MessageHandlers;
 using Owin;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,8 @@ namespace AluPlast.Service
             config.MessageHandlers.Add(new TraceMessageHandler());
         //    config.MessageHandlers.Add(new SecretKeyHandler());
          //   config.MessageHandlers.Add(new UnderConstructionHandler());
+
+            config.Formatters.Add(new QrCodeFormatter());
 
             appBuilder.UseWebApi(config);
         }
