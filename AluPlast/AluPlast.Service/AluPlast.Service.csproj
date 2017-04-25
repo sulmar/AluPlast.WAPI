@@ -87,9 +87,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFilters\ExecutionTimeActionFilter.cs" />
     <Compile Include="ActionFilters\ValidateModelStateFilter.cs" />
     <Compile Include="ActionResults\StreamActionResult.cs" />
-    <Compile Include="Controllers\HtmlController.cs" />
     <Compile Include="Controllers\LoadsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
