@@ -40,6 +40,7 @@ namespace AluPlast.Service
 
 
             config.Filters.Add(new ValidateModelStateFilter());
+            config.Filters.Add(new ExecutionTimeActionFilter());
 
 
             appBuilder.UseWebApi(config);
