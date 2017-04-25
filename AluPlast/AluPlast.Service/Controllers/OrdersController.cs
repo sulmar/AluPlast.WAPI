@@ -21,13 +21,28 @@ namespace AluPlast.Service.Controllers
         [Route("{id}")]
         public string Get(string id)
         {
-            return $"Hello {id}";
+            return $"Hello string {id}";
         }
 
         [Route("{id:int}")]
         public string Get(int id)
         {
-            return $"Hello {id}";
+            return $"Hello Number {id}";
+        }
+
+        //[Route(@"{id:range(1,3)}")]
+        //public IHttpActionResult GetByNumber(string id)
+        //{
+        //    return Ok($"Hello Range {id}");
+        //}
+
+
+        [Route(@"{id:regex(^ABC\d+$)}")]
+        public IHttpActionResult GetRegex(string id)
+        {
+            return Ok($"Hello Regex {id}");
+
+
         }
 
         [Route("{orderdate:DateTime}")]
