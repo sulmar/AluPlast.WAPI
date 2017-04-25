@@ -45,7 +45,7 @@ namespace AluPlast.ControlLoader.MockService
                 }},
             new Load()
             {
-                Id = 2,
+                Id = 3,
                 LoadDate = new DateTime(2017, 03, 30),
                 Vehicle = new Vehicle
                 {
@@ -99,6 +99,11 @@ namespace AluPlast.ControlLoader.MockService
                 .ToList();
 
             return loads;
+        }
+
+        public Load Get(int id)
+        {
+            return _zaladunki.SingleOrDefault(z => z.Id == id);
         }
     }
  }

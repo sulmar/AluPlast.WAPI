@@ -16,6 +16,8 @@ namespace AluPlast.ControlLoader.Interfaces
 
         IList<Load> Get(DateTime date);
 
+        Load Get(int id);
+
         IList<Load> Get(LoadSearchCriteria criteria);
 
         Task<List<Load>> GetAsync(DateTime date);
