@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AluPlast.ControlLoader.Inte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AluPlast.ControlLoader.MockService", "AluPlast.ControlLoader.MockService\AluPlast.ControlLoader.MockService.csproj", "{2FA86722-93A7-41DF-A150-A96D2DC0AF8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AluPlast.UnitTests", "AluPlast.UnitTests\AluPlast.UnitTests.csproj", "{1B644DB8-DD04-4F6E-B058-E1001603C249}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2FA86722-93A7-41DF-A150-A96D2DC0AF8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FA86722-93A7-41DF-A150-A96D2DC0AF8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FA86722-93A7-41DF-A150-A96D2DC0AF8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B644DB8-DD04-4F6E-B058-E1001603C249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B644DB8-DD04-4F6E-B058-E1001603C249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B644DB8-DD04-4F6E-B058-E1001603C249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B644DB8-DD04-4F6E-B058-E1001603C249}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

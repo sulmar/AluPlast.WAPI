@@ -1,5 +1,7 @@
-﻿using AluPlast.Service.Formatters;
+﻿using AluPlast.Service.ActionFilters;
+using AluPlast.Service.Formatters;
 using AluPlast.Service.MessageHandlers;
+using FluentValidation.WebApi;
 using Owin;
 using System;
 using System.Collections.Generic;
@@ -36,7 +38,13 @@ namespace AluPlast.Service
             config.Formatters.Add(new PdfLoadsFormatter());
             config.Formatters.Add(new PdfLoadFormatter());
 
+
+            config.Filters.Add(new ValidateModelStateFilter());
+
+
             appBuilder.UseWebApi(config);
+
+            FluentValidationModelValidatorProvider.Configure(config);
         }
     }
 }

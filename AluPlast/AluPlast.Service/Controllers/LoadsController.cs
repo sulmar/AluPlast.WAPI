@@ -2,6 +2,7 @@
 using AluPlast.ControlLoader.MockService;
 using AluPlast.Models;
 using AluPlast.Models.SearchCriterias;
+using AluPlast.Service.ActionFilters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ using System.Web.Http;
 
 namespace AluPlast.Service.Controllers
 {
+    [ValidateModelStateFilter]
     public class LoadsController : ApiController
     {
         private readonly ILoadsService LoadsService;
@@ -69,6 +71,11 @@ namespace AluPlast.Service.Controllers
 
         public async Task<IHttpActionResult> Post(Load load)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
             await LoadsService.AddAsync(load);
 
             // return Created($"http://localhost:9000/api/loads/{load.Id}", load);

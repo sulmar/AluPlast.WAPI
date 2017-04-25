@@ -4,6 +4,7 @@
     "uwp.10.0.app": {}
   },
   "dependencies": {
+    "FluentValidation": "6.4.1",
     "Microsoft.NETCore": "5.0.0",
     "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
   },

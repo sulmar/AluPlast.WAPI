@@ -1,10 +1,15 @@
-﻿using System;
+﻿using AluPlast.Models.Validators;
+using FluentValidation.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace AluPlast.Models
 {
+    [Validator(typeof(LoadValidator))]
     public class Load : Base
     {
         public int Id { get; set; }
