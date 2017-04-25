@@ -25,14 +25,7 @@ namespace AluPlast.Service.Controllers
             this.LoadsService = loadsService;
         }
 
-        //[Route(@"api/loads/{id:regex(^SZY\d{3})")]
-        //public IHttpActionResult Get(string id)
-        //{
-
-        //    throw new NotImplementedException();
-
-
-        //}
+       
 
         [Route("api/loads/{date:datetime}")]
         public IHttpActionResult Get(DateTime date)
@@ -48,6 +41,18 @@ namespace AluPlast.Service.Controllers
             return Ok(loads);
         }
 
+        public IHttpActionResult Get(int id)
+        {
+            var load = LoadsService.Get(id);
+
+            if (load == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(load);
+        }
+
         public IHttpActionResult Get([FromUri] LoadSearchCriteria criteria)
         {
             var loads = LoadsService.Get(criteria.BeginDate);
@@ -59,6 +64,35 @@ namespace AluPlast.Service.Controllers
 
 
             return Ok(loads);
+        }
+
+
+        public async Task<IHttpActionResult> Post(Load load)
+        {
+            await LoadsService.AddAsync(load);
+
+            // return Created($"http://localhost:9000/api/loads/{load.Id}", load);
+
+            return CreatedAtRoute("DefaultApi", new { id = load.Id }, load);
+        }
+
+        public async Task<IHttpActionResult> Put(int id, [FromBody] Load load)
+        {
+            if (id != load.Id)
+            {
+                return BadRequest();
+            }
+
+            await LoadsService.UpdateAsync(load);
+
+            return Ok();
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            LoadsService.Canceled(id, null);
+
+            return Ok();
         }
     }
 }
