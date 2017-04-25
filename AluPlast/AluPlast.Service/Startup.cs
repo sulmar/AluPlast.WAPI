@@ -33,6 +33,8 @@ namespace AluPlast.Service
          //   config.MessageHandlers.Add(new UnderConstructionHandler());
 
             config.Formatters.Add(new QrCodeFormatter());
+            config.Formatters.Add(new PdfLoadsFormatter());
+            config.Formatters.Add(new PdfLoadFormatter());
 
             appBuilder.UseWebApi(config);
         }
