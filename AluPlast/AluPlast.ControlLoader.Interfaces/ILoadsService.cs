@@ -26,6 +26,7 @@ namespace AluPlast.ControlLoader.Interfaces
 
         void Canceled(int loadId, Uzytkownik @operator);
 
+        Task AddAsync(Load load);
         Task UpdateAsync(Load load);
     }
 }

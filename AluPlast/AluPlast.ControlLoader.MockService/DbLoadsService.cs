@@ -12,7 +12,7 @@ namespace AluPlast.ControlLoader.MockService
 {
     public class DbLoadsService : ILoadsService
     {
-        private readonly List<Load> _zaladunki = new List<Load>
+        private static readonly List<Load> _zaladunki = new List<Load>
         {
             new Load()
             {
@@ -105,5 +105,19 @@ namespace AluPlast.ControlLoader.MockService
         {
             return _zaladunki.SingleOrDefault(z => z.Id == id);
         }
+
+        public Task AddAsync(Load load)
+        {
+            return Task.Run(() => Add(load));
+        }
+
+        private void Add(Load load)
+        {
+            var loadId = _zaladunki.Max(z => z.Id);
+            load.Id = ++loadId;
+
+            _zaladunki.Add(load);
+        }
+
     }
  }
