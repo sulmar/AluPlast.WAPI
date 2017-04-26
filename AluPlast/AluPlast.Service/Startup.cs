@@ -5,6 +5,7 @@ using AluPlast.Service.Formatters;
 using AluPlast.Service.MessageHandlers;
 using FluentValidation.WebApi;
 using Owin;
+using Swashbuckle.Application;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,7 +45,10 @@ namespace AluPlast.Service
             config.Filters.Add(new ValidateModelStateFilter());
             config.Filters.Add(new ExecutionTimeActionFilter());
 
-            config.Filters.Add(new AuthenticationFilter());
+            //    config.Filters.Add(new AuthenticationFilter());
+            config
+                .EnableSwagger(c => c.SingleApiVersion("v1", "AluPlast Service"))
+                .EnableSwaggerUi();
 
             appBuilder.UseWebApi(config);
 
