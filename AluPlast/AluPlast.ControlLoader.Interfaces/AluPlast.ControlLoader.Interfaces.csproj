@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAdresKontrahentaService.cs" />
-    <Compile Include="IAuthenticationService.cs" />
     <Compile Include="IItemsService.cs" />
     <Compile Include="ILoadsService.cs" />
     <Compile Include="IPhotosService.cs" />
