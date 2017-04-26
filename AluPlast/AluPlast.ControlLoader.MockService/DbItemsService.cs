@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -164,6 +165,31 @@ namespace AluPlast.ControlLoader.MockService
         {
             var item = _items.FirstOrDefault(x => x.Id == itemId);
             _items.Remove(item);
+        }
+
+        public Task<IList<JednostkaLogistyczna>> GetAsync()
+        {
+            return Task<IList<JednostkaLogistyczna>>.Factory.StartNew(()=>_items);
+        }
+
+        Task<JednostkaLogistyczna> IService<JednostkaLogistyczna, int>.GetAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateAsync(JednostkaLogistyczna item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddAsync(JednostkaLogistyczna item)
+        {
+            throw new NotImplementedException();
         }
     }
 }
