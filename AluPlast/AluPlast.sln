@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AluPlast.ControlLoader.Mock
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AluPlast.UnitTests", "AluPlast.UnitTests\AluPlast.UnitTests.csproj", "{1B644DB8-DD04-4F6E-B058-E1001603C249}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AluPlast.Logowanie.Interfaces", "AluPlast.Logowanie.Interfaces\AluPlast.Logowanie.Interfaces.csproj", "{80500375-5177-48C0-8AE7-6441A8D66D9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AluPlast.Logowanie.MockService", "AluPlast.Logowanie.MockService\AluPlast.Logowanie.MockService.csproj", "{DA233ED6-B78B-4E4A-BEC4-3B28A2CF90BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{1B644DB8-DD04-4F6E-B058-E1001603C249}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B644DB8-DD04-4F6E-B058-E1001603C249}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B644DB8-DD04-4F6E-B058-E1001603C249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80500375-5177-48C0-8AE7-6441A8D66D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80500375-5177-48C0-8AE7-6441A8D66D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80500375-5177-48C0-8AE7-6441A8D66D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80500375-5177-48C0-8AE7-6441A8D66D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA233ED6-B78B-4E4A-BEC4-3B28A2CF90BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA233ED6-B78B-4E4A-BEC4-3B28A2CF90BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA233ED6-B78B-4E4A-BEC4-3B28A2CF90BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA233ED6-B78B-4E4A-BEC4-3B28A2CF90BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
