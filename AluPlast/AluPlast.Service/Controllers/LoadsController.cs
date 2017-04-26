@@ -15,7 +15,7 @@ using System.Web.Http;
 namespace AluPlast.Service.Controllers
 {
     [ValidateModelStateFilter]
-    [AuthenticationFilter("Magazynier")]
+   // [AuthenticationFilter("Magazynier")]
     public class LoadsController : ApiController
     {
         private readonly ILoadsService LoadsService;

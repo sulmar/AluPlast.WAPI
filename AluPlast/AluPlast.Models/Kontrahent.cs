@@ -2,7 +2,7 @@
 
 namespace AluPlast.Models
 {
-    public class Kontrahent
+    public class Kontrahent : GenericBase<string>
     {
         public ObservableCollection<Listing> Listingi = new ObservableCollection<Listing>();
 
@@ -19,6 +19,19 @@ namespace AluPlast.Models
         public override string ToString()
         {
             return Akronim;
+        }
+
+        public override string Id
+        {
+            get
+            {
+                return Akronim;
+            }
+
+            set
+            {
+                Akronim = value;
+            }
         }
     }
 }

@@ -7,17 +7,36 @@ using System.Threading.Tasks;
 
 namespace AluPlast.ControlLoader.Interfaces
 {
-    public interface IItemsService
-    {
-        Task<IList<JednostkaLogistyczna>> GetAsync(int loadId);
 
+
+    public interface IService<TItem, TKey>
+    {
+        Task<IList<TItem>> GetAsync();
+
+        Task<TItem> GetAsync(TKey id);
+
+        Task UpdateAsync(TItem item);
+
+        Task DeleteAsync(TKey id);
+
+        Task AddAsync(TItem item);
+
+    }
+    public interface ICustomerService : IService<Customer, int>
+    {
+
+    }
+
+    public interface IItemsService : IService<JednostkaLogistyczna, int>
+    {
         IList<JednostkaLogistyczna> Get(int loadId);
 
         Task<string> GetTwrKodAsync(int palId);
 
-        Task Update(JednostkaLogistyczna item);
+    }
 
-        Task AddAsync(int loadId, JednostkaLogistyczna item);
-        Task Remove(int itemId, string kontroler);
+    public interface IKontrahenciService : IService<Kontrahent, string>
+    {
+
     }
 }

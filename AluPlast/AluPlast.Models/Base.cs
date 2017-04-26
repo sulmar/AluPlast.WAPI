@@ -4,7 +4,13 @@ using System.Runtime.CompilerServices;
 
 namespace AluPlast.Models
 {
-    public abstract class Base : INotifyPropertyChanged, INotifyCollectionChanged
+
+    public abstract class GenericBase<TKey>
+    {
+        public virtual TKey Id { get; set; }
+    }
+
+    public abstract class Base : GenericBase<int>, INotifyPropertyChanged, INotifyCollectionChanged
     {
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
@@ -19,6 +25,9 @@ namespace AluPlast.Models
         {
             CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
         }
+
+       
+
 
     }
 }
