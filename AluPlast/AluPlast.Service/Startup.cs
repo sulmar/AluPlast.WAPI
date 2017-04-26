@@ -1,4 +1,6 @@
-﻿using AluPlast.Service.ActionFilters;
+﻿using AluPlast.ControlLoader.Interfaces;
+using AluPlast.Logowanie.MockService;
+using AluPlast.Service.ActionFilters;
 using AluPlast.Service.Formatters;
 using AluPlast.Service.MessageHandlers;
 using FluentValidation.WebApi;
@@ -42,6 +44,7 @@ namespace AluPlast.Service
             config.Filters.Add(new ValidateModelStateFilter());
             config.Filters.Add(new ExecutionTimeActionFilter());
 
+            config.Filters.Add(new AuthenticationFilter());
 
             appBuilder.UseWebApi(config);
 

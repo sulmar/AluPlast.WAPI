@@ -87,6 +87,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFilters\AuthenticationFilter.cs" />
     <Compile Include="ActionFilters\ExecutionTimeActionFilter.cs" />
     <Compile Include="ActionFilters\ValidateModelStateFilter.cs" />
     <Compile Include="ActionResults\StreamActionResult.cs" />
@@ -117,6 +118,14 @@
     <ProjectReference Include="..\AluPlast.ControlLoader.MockService\AluPlast.ControlLoader.MockService.csproj">
       <Project>{2FA86722-93A7-41DF-A150-A96D2DC0AF8B}</Project>
       <Name>AluPlast.ControlLoader.MockService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AluPlast.Logowanie.Interfaces\AluPlast.Logowanie.Interfaces.csproj">
+      <Project>{80500375-5177-48C0-8AE7-6441A8D66D9A}</Project>
+      <Name>AluPlast.Logowanie.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AluPlast.Logowanie.MockService\AluPlast.Logowanie.MockService.csproj">
+      <Project>{DA233ED6-B78B-4E4A-BEC4-3B28A2CF90BB}</Project>
+      <Name>AluPlast.Logowanie.MockService</Name>
     </ProjectReference>
     <ProjectReference Include="..\AluPlast.Models\AluPlast.Models.csproj">
       <Project>{eebbfae4-4661-4836-bfdc-7700817cfc4b}</Project>
