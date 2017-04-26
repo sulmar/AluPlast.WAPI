@@ -8,12 +8,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace AluPlast.Service.Controllers
 {
     [ValidateModelStateFilter]
+    [AuthenticationFilter("Magazynier")]
     public class LoadsController : ApiController
     {
         private readonly ILoadsService LoadsService;
@@ -32,6 +34,11 @@ namespace AluPlast.Service.Controllers
         [Route("api/loads/{date:datetime}")]
         public IHttpActionResult Get(DateTime date)
         {
+            //if (Thread.CurrentPrincipal.IsInRole("Magazynier"))
+            //{
+
+            //}
+
             var loads = LoadsService.Get(date);
 
             if (loads==null || !loads.Any())
@@ -45,6 +52,10 @@ namespace AluPlast.Service.Controllers
 
         public IHttpActionResult Get(int id)
         {
+            if (Thread.CurrentPrincipal.IsInRole("Magazynier"))
+            {
+            }
+
             var load = LoadsService.Get(id);
 
             if (load == null)
