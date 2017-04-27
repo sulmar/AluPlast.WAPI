@@ -20,9 +20,9 @@ namespace AluPlast.Service.ActionResults
         private const string ViewDirectory = @"Views";
 
         private readonly string _viewname;
-        private readonly object _model;
+        private readonly dynamic _model;
 
-        public RazorActionResult(string viewname, object model)
+        public RazorActionResult(string viewname, dynamic model)
         {
             this._viewname = viewname;
             this._model = model;
@@ -33,7 +33,7 @@ namespace AluPlast.Service.ActionResults
             var response = new HttpResponseMessage(HttpStatusCode.OK);
             var template = LoadTemplate(_viewname);
 
-            var result = Engine.Razor.RunCompile(template, "templateNameInTheCache", typeof(Load), _model);
+            var result = Engine.Razor.RunCompile(template, "templateNameInTheCache", typeof(Load), (object) _model);
 
             response.Content = new StringContent(result);
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/html");
