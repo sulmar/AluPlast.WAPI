@@ -13,14 +13,14 @@ namespace AluPlast.Service
         {
             string baseAddress = "http://localhost:9000";
 
-            using (WebApp.Start<Startup>(baseAddress))
-            {
-                Console.WriteLine($"Service on {baseAddress} started.");
+            WebApiService service = new WebApiService(baseAddress);
+            service.Start();
 
-                Console.WriteLine("Press any key to exit.");
+            Console.WriteLine("Press any key to exit.");
 
-                Console.ReadKey();
-            }
+            Console.ReadKey();
+
+            service.Stop();
 
 
         }
