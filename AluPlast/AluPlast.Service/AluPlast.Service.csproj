@@ -84,6 +84,10 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RazorEngine, Version=3.9.3.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.9.3\lib\net45\RazorEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Swashbuckle.Core.5.5.3\lib\net40\Swashbuckle.Core.dll</HintPath>
       <Private>True</Private>
@@ -108,6 +112,10 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -127,9 +135,12 @@
     <Compile Include="ActionFilters\AuthenticationFilter.cs" />
     <Compile Include="ActionFilters\ExecutionTimeActionFilter.cs" />
     <Compile Include="ActionFilters\ValidateModelStateFilter.cs" />
+    <Compile Include="ActionResults\HtmlActionResult.cs" />
+    <Compile Include="ActionResults\RazorActionResult.cs" />
     <Compile Include="ActionResults\StreamActionResult.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\KontrahenciController.cs" />
     <Compile Include="Controllers\LoadsController.cs" />
@@ -139,6 +150,7 @@
     <Compile Include="Formatters\PdfLoadFormatter.cs" />
     <Compile Include="Formatters\PdfLoadsFormatter.cs" />
     <Compile Include="Formatters\QrCodeFormatter.cs" />
+    <Compile Include="MessageHandlers\AcceptLanguageHandler.cs" />
     <Compile Include="MessageHandlers\FormatMessageHandler.cs" />
     <Compile Include="MessageHandlers\SecretKeyHandler.cs" />
     <Compile Include="MessageHandlers\TraceMessageHandler.cs" />
@@ -154,6 +166,9 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Dashboard.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AluPlast.ControlLoader.Interfaces\AluPlast.ControlLoader.Interfaces.csproj">
@@ -190,6 +205,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

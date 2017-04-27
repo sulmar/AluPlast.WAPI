@@ -35,17 +35,20 @@ namespace AluPlast.Service
 
 
             config.MessageHandlers.Add(new TraceMessageHandler());
-            config.MessageHandlers.Add(new FormatMessageHandler());
-        //    config.MessageHandlers.Add(new SecretKeyHandler());
-         //   config.MessageHandlers.Add(new UnderConstructionHandler());
+            // config.MessageHandlers.Add(new FormatMessageHandler());
+            //    config.MessageHandlers.Add(new SecretKeyHandler());
+            //   config.MessageHandlers.Add(new UnderConstructionHandler());
 
             config.Formatters.Add(new QrCodeFormatter());
             config.Formatters.Add(new PdfLoadsFormatter());
             config.Formatters.Add(new PdfLoadFormatter());
 
 
-            config.Filters.Add(new ValidateModelStateFilter());
-            config.Filters.Add(new ExecutionTimeActionFilter());
+            config.Formatters.JsonFormatter.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+
+
+      //      config.Filters.Add(new ValidateModelStateFilter());
+         //   config.Filters.Add(new ExecutionTimeActionFilter());
 
             var container = new UnityContainer();
 
