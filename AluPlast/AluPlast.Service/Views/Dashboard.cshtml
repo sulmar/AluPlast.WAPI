@@ -1,0 +1,24 @@
+﻿@using AluPlast.Models;
+@model Load
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>@Model.Id</title>
+</head>
+<body>
+    <b>Hello Dashboard</b>
+
+    <h1>@Model.Id</h1>
+    
+
+    <ul>
+        @foreach (var item in @Model.Items)
+        {            
+            <li><a href='@string.Format("/api/items/{0}", item.Id)'>@item.TwrKod</a></li>}
+    </ul>
+
+</body>
+</html>
