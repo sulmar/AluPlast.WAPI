@@ -22,9 +22,9 @@ namespace AluPlast.Models
 
         public Customer Spedition { get; set; }
 
-        private ObservableCollection<JednostkaLogistyczna> _Items = new ObservableCollection<JednostkaLogistyczna>();
+        private IList<JednostkaLogistyczna> _Items = new ObservableCollection<JednostkaLogistyczna>();
 
-        public ObservableCollection<JednostkaLogistyczna> Items
+        public IList<JednostkaLogistyczna> Items
         {
             get
             {
