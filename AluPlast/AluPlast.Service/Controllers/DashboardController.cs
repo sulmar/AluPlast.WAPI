@@ -15,17 +15,23 @@ namespace AluPlast.Service.Controllers
     public class DashboardController : ApiController
     {
         private readonly ILoadsService LoadService;
+        private readonly IItemsService ItemsService;
 
-        public DashboardController(ILoadsService loadService)
+        public DashboardController(ILoadsService loadService, IItemsService itemsService)
         {
             this.LoadService = loadService;
+            this.ItemsService = itemsService;
         }
 
         public IHttpActionResult Get()
         {
-            var load = LoadService.Get(1);
+            var model = LoadService.Get(1);
 
-            return new HtmlActionResult("<b>Hello</b>");
+            model.Items = ItemsService.Get(model.Id);
+
+            // return new HtmlActionResult("<b>Hello</b>");
+
+            return new RazorActionResult("Dashboard", model);
         }
     }
 }
