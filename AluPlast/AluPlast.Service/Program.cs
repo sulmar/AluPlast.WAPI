@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Topshelf;
 
 namespace AluPlast.Service
 {
@@ -13,14 +14,36 @@ namespace AluPlast.Service
         {
             string baseAddress = "http://localhost:9000";
 
-            WebApiService service = new WebApiService(baseAddress);
-            service.Start();
+            HostFactory.Run(configurator =>
+            {
+                configurator.Service<WebApiService>(sc =>
+                {
+                    sc.ConstructUsing(() => new WebApiService(baseAddress));
 
-            Console.WriteLine("Press any key to exit.");
+                    sc.WhenStarted(s => s.Start());
 
-            Console.ReadKey();
+                    sc.WhenStopped(s => s.Stop());
+                });
 
-            service.Stop();
+                configurator.RunAsLocalSystem();
+                configurator.EnableShutdown();
+
+                configurator.SetDisplayName("AluPlast Service");
+                configurator.SetServiceName("AluPlastService");
+                configurator.SetDescription("Opis usługi AluPlast...");
+
+                configurator.StartAutomatically();
+
+            });
+
+            //WebApiService service = new WebApiService(baseAddress);
+            //service.Start();
+
+            //Console.WriteLine("Press any key to exit.");
+
+            //Console.ReadKey();
+
+            //service.Stop();
 
 
         }
