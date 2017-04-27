@@ -12,11 +12,6 @@ namespace AluPlast.Service.Controllers
 {
     public class ItemsController : BaseController<JednostkaLogistyczna, int, IItemsService>
     {
-        public ItemsController()
-            : this(new DbItemsService())
-        {
-        }
-
         public ItemsController(IItemsService service) : base(service)
         {
         }

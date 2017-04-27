@@ -20,9 +20,9 @@ namespace AluPlast.Service.Controllers
     {
         private readonly ILoadsService LoadsService;
 
-        public LoadsController()
-            : this(new DbLoadsService())
-        { }
+        //public LoadsController()
+        //    : this(new DbLoadsService())
+        //{ }
 
         public LoadsController(ILoadsService loadsService)
         {

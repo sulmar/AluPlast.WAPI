@@ -1,9 +1,11 @@
 ﻿using AluPlast.ControlLoader.Interfaces;
+using AluPlast.ControlLoader.MockService;
 using AluPlast.Logowanie.MockService;
 using AluPlast.Service.ActionFilters;
 using AluPlast.Service.Formatters;
 using AluPlast.Service.MessageHandlers;
 using FluentValidation.WebApi;
+using Microsoft.Practices.Unity;
 using Owin;
 using Swashbuckle.Application;
 using System;
@@ -44,6 +46,17 @@ namespace AluPlast.Service
 
             config.Filters.Add(new ValidateModelStateFilter());
             config.Filters.Add(new ExecutionTimeActionFilter());
+
+            var container = new UnityContainer();
+
+#if DEBUG
+            container.RegisterType<ILoadsService, DbLoadsService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IItemsService, DbItemsService>(new HierarchicalLifetimeManager());
+#else
+            container.RegisterType<ILoadsService, DbLoadsService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IItemsService, DbItemsService>(new HierarchicalLifetimeManager());
+#endif
+            config.DependencyResolver = new UnityResolver(container);
 
             //    config.Filters.Add(new AuthenticationFilter());
             config
