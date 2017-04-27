@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AluPlast.Logowanie.Interfac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AluPlast.Logowanie.MockService", "AluPlast.Logowanie.MockService\AluPlast.Logowanie.MockService.csproj", "{DA233ED6-B78B-4E4A-BEC4-3B28A2CF90BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiService", "WebApiService\WebApiService.csproj", "{AE76191C-E338-4D74-BE7B-656AC53D823F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{DA233ED6-B78B-4E4A-BEC4-3B28A2CF90BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA233ED6-B78B-4E4A-BEC4-3B28A2CF90BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA233ED6-B78B-4E4A-BEC4-3B28A2CF90BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE76191C-E338-4D74-BE7B-656AC53D823F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE76191C-E338-4D74-BE7B-656AC53D823F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE76191C-E338-4D74-BE7B-656AC53D823F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE76191C-E338-4D74-BE7B-656AC53D823F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
