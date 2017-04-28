@@ -79,6 +79,8 @@
     <Compile Include="Uprawnienie.cs" />
     <Compile Include="Enums\UprawnienieTyp.cs" />
     <Compile Include="Validators\LoadValidator.cs" />
+    <Compile Include="Validators\PaczkaElemValidator.cs" />
+    <Compile Include="Validators\PaczkaNagValidator.cs" />
     <Compile Include="Validators\PeriodSearchCriteriaValidator.cs" />
     <Compile Include="Validators\VehicleValidator.cs" />
     <Compile Include="Vehicle.cs" />
