@@ -29,7 +29,9 @@ namespace AluPlast.Service.Controllers
             this.LoadsService = loadsService;
         }
 
-       
+        
+        
+
 
         [Route("api/loads/{date:datetime}")]
         public IHttpActionResult Get(DateTime date)
@@ -50,12 +52,26 @@ namespace AluPlast.Service.Controllers
             return Ok(loads);
         }
 
+
+        //public IHttpActionResult Head(int id)
+        //{
+        //    var load = LoadsService.Get(id);
+
+        //    if (load == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return Ok();
+        //}
+
+        [AcceptVerbs("GET", "HEAD")]
         public IHttpActionResult Get(int id)
         {
             if (Thread.CurrentPrincipal.IsInRole("Magazynier"))
             {
             }
-
+            
             var load = LoadsService.Get(id);
 
             if (load == null)
@@ -63,7 +79,15 @@ namespace AluPlast.Service.Controllers
                 return NotFound();
             }
 
-            return Ok(load);
+            if (this.Request.Method == HttpMethod.Head)
+            {
+                return Ok();
+            }
+            else
+            {
+
+                return Ok(load);
+            }
         }
 
         public IHttpActionResult Get([FromUri] LoadSearchCriteria criteria)
