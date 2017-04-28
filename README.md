@@ -24,3 +24,7 @@ http://webapiservice20170426050217.azurewebsites.net/
 > AluPlast.Service uninstall
 ~~~
 
+
+## Maszyna stanów
+https://gist.github.com/sulmar/b11e983e69cbb622220d9f44bbbf2047
+
