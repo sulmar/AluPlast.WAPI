@@ -26,5 +26,9 @@ http://webapiservice20170426050217.azurewebsites.net/
 
 
 ## Maszyna stanów
+
+### Przykład
 https://gist.github.com/sulmar/b11e983e69cbb622220d9f44bbbf2047
 
+### Wizualizacja
+http://www.webgraphviz.com/
